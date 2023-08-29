@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 
 const NEW_ESCAPE_MESSAGE_EVENT = "newEscapeMessage";
 const START_ESCAPE_EVENT = "startEscape";
-const SOCKET_SERVER_URL = process.env.PORT || "localhost:3001";
+const SOCKET_SERVER_URL = process.env.PORT || "http://localhost:3000";
 
 const useRoom = roomId => {
   const [message, setMessage] = useState(null);
