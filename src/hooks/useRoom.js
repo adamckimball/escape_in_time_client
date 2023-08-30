@@ -15,6 +15,11 @@ const useRoom = roomId => {
     // Creates a WebSocket connection
     socketRef.current = io(SOCKET_SERVER_URL, {
       query: { roomId },
+<<<<<<< Updated upstream
+      transports: ["websocket"],
+=======
+      withCredentials: true,
+>>>>>>> Stashed changes
     });
 
     // Listens for incoming messages
