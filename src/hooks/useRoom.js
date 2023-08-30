@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 
 const NEW_ESCAPE_MESSAGE_EVENT = "newEscapeMessage";
 const START_ESCAPE_EVENT = "startEscape";
-const SOCKET_SERVER_URL = process.env.PORT || "http://localhost:3000";
+const SOCKET_SERVER_URL = process.env.REACT_APP_PORT;
 
 const useRoom = roomId => {
   const [message, setMessage] = useState(null);
@@ -11,6 +11,7 @@ const useRoom = roomId => {
   const socketRef = useRef();
 
   useEffect(() => {
+    console.log({ useRoom: true, port: SOCKET_SERVER_URL });
     // Creates a WebSocket connection
     socketRef.current = io(SOCKET_SERVER_URL, {
       query: { roomId },
